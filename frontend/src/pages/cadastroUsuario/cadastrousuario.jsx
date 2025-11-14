@@ -4,8 +4,8 @@ import { useState } from 'react';
 import api from '../../api';
 
 export default function Cadastro() {
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
@@ -13,11 +13,11 @@ export default function Cadastro() {
     e.preventDefault();
 
     try {
-      const body = { email, cpf, senha };
+      const body = { nome, email, senha };
       await api.post('/usuario', body);
 
       alert("Usuário cadastrado com sucesso!");
-      navigate('/login');
+      navigate('/loginusuario');
     } catch (err) {
       alert("Erro ao cadastrar: " + err.response?.data?.erro);
     }
@@ -33,11 +33,11 @@ export default function Cadastro() {
         <h1>Cadastro - Usuário</h1>
 
         <form className="cadastro-formulario" onSubmit={cadastrar}>
-          <label>Email:</label>
-          <input type="email" placeholder="Digite seu E-mail" value={email} onChange={e => setEmail(e.target.value)} />
+          <label>Nome:</label>
+          <input type="text" placeholder="Digite seu Nome" value={nome} onChange={e => setNome(e.target.value)} />
 
-          <label>CPF:</label>
-          <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
+          <label>Email:</label>
+          <input type="email" placeholder="Digite seu Email" value={email} onChange={e => setEmail(e.target.value)} />
 
           <label>Senha:</label>
           <input type="password" placeholder="Digite sua Senha" value={senha} onChange={e => setSenha(e.target.value)} />

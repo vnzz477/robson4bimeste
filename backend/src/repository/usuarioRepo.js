@@ -17,7 +17,7 @@ export async function cadastrarUsuario(pessoa) {
 
 export async function validarUsuario(pessoa) {
   const comando = `
-    select id_usuario, nome
+    select id_usuario, nome, email
     from tb_usuario
     where email = ? and senha = ?
   `;

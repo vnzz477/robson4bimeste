@@ -1,0 +1,49 @@
+.inicio-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    text-align: center;
+    background: rgb(170, 209, 253);
+  }
+  
+  .inicio-content {
+    margin-top: 50px;
+  }
+  
+  .inicio-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .descricao {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #555;
+  }
+  
+  .inicio-footer {
+    margin-bottom: 30px;
+  }
+  
+  .btn-admin {
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-admin:hover {
+    background-color: #3a9e3b;
+    transform: translateY(-2px);
+  }
+  

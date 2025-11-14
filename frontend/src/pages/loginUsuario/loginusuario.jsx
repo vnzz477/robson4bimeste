@@ -21,20 +21,20 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const body = { cpf, senha };
+      const body = { email, senha };
       const resp = await api.post('/login', body);
 
       const token = resp.data.token;
-      const usuario = resp.data.usuario.email;
+      const usuario = resp.data.usuario.nome;
       const usuarioi = resp.data.usuario;
       
 
       localStorage.setItem('TOKEN', resp.data.token);
-      localStorage.setItem('USUARIO', usuario.email);
+      localStorage.setItem('USUARIO', resp.data.usuario.nome);
       localStorage.setItem('ID_USUARIO', usuarioi.id); 
       navigate('/inicio');
     } catch (err) {
-      alert('Cpf ou senha incorretos');
+      alert('Email ou senha incorretos');
     }
   }
 
@@ -48,9 +48,9 @@ export default function Login() {
         <h1>Login - Usuário</h1>
 
         <form className="login-formulario" onSubmit={entrar}>
-          <label>CPF:</label>
+          <label>Email:</label>
           
-          <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
+          <input type="email" placeholder="Digite seu Email" value={email} onChange={e => setEmail(e.target.value)}/>
 
           <label>Senha:</label>
           <input type="password" placeholder="Digite sua Senha" value={senha} onChange={e => setSenha(e.target.value)}/>
