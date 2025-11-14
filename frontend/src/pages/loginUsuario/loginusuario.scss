@@ -17,7 +17,7 @@ body {
     overflow: hidden;
   
     .login-lado-esquerdo {
-      background-color: #2FA4D8;
+    background: rgb(170, 209, 253); 
       flex: 1;
       display: flex;
       justify-content: center;
@@ -76,7 +76,7 @@ body {
         }
   
         button {
-          background-color: #2FA4D8;
+           background: rgb(170, 209, 253); 
           color: white;
           border: none;
           border-radius: 8px;
@@ -87,7 +87,7 @@ body {
           transition: background-color 0.3s ease, transform 0.2s ease;
   
           &:hover {
-            background-color: #2488b6;
+             background-color: #4e91f5;
             transform: translateY(-2px);
           }
         }

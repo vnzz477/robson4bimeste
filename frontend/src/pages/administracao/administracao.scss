@@ -1,0 +1,51 @@
+.lista-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5faff;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.titulo {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1e3d58;
+}
+
+.loading {
+  font-size: 20px;
+  color: #888;
+}
+
+.lista-tabela {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background: #1e3d58;
+  color: #fff;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+}
+
+tbody tr:nth-child(even) {
+  background: #eef5ff;
+}
+
+tbody tr:hover {
+  background: #dceafe;
+  transition: 0.2s;
+}

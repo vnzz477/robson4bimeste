@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #F4FBFF;
+}
+
+.app {
+  text-align: center;
+}
+
+.loginAdm-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  .loginAdm-esquerdo {
+    background-color: #553491;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loginAdm-logo {
+      width: 70%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .loginAdm-direito {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #000;
+    }
+
+    .loginAdm-form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-family: 'Arial', sans-serif;
+        font-weight: 300;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+
+      input {
+        margin-bottom: 15px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #E5E5E5;
+        outline: none;
+        font-size: 15px;
+        transition: 0.2s ease-in-out;
+
+        &:focus {
+          background-color: #f9f9f9;
+          border: 1px solid #2FA4D8;
+        }
+      }
+
+      button {
+        background-color: #553491;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+          background-color: #3b2368;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .loginAdm-registro {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+
+      a {
+        color: #0073A6;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .loginAdm-container {
+    flex-direction: column;
+
+    .loginAdm-esquerdo {
+      height: 35vh;
+
+      .loginAdm-logo {
+        width: 40%;
+      }
+    }
+
+    .loginAdm-direito {
+      height: 65vh;
+      padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .loginAdm-container {
+    flex-direction: column;
+    box-shadow: none;
+
+    .loginAdm-esquerdo {
+      height: 30vh;
+
+      .loginAdm-logo {
+        width: 55%;
+        max-width: 220px;
+      }
+    }
+
+    .loginAdm-direito {
+      height: 70vh;
+      padding: 25px 20px;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .loginAdm-form {
+        width: 100%;
+        max-width: 350px;
+
+        input {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        button {
+          padding: 10px;
+          font-size: 15px;
+        }
+      }
+
+      .loginAdm-registro {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .loginAdm-direito {
+    h1 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .loginAdm-form {
+      input {
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+
+    .loginAdm-registro {
+      font-size: 12px;
+    }
+  }
+}

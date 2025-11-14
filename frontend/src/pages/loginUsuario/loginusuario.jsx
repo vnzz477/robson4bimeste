@@ -8,14 +8,7 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const usuario = localStorage.getItem("USUARIO");
-    const token = localStorage.getItem("TOKEN");
 
-    if (usuario && token) {
-      navigate('/inicio');
-    }
-  }, [navigate]);
 
   async function entrar(e) {
     e.preventDefault();
@@ -41,7 +34,8 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-lado-esquerdo">
-        <img src="./Logo1.png" className="login-logo" />
+         <h1>Trabalho Bimestral <br />
+       </h1>
       </div>
 
       <div className="login-lado-direito">
@@ -59,7 +53,7 @@ export default function Login() {
 
           <p className="login-registro">
             Não possui uma conta?
-            <Link to={'/cadastro'}> Cadastrar</Link>
+            <Link to={'/'}> Cadastrar</Link>
           </p>
         </form>
       </div>

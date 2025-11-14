@@ -24,15 +24,16 @@ export default function Cadastro() {
   }
 
   return (
-    <div className="cadastro-container">
-      <div className="cadastro-lado-esquerdo">
-        <img src="./Logo1.png" className="cadastro-logo" />
+    <div className="cadastroWrapper">
+      <div className="cadastroLeftSide">
+       <h1>Trabalho Bimestral <br />
+       </h1>
       </div>
 
-      <div className="cadastro-lado-direito">
+      <div className="cadastroRightSide">
         <h1>Cadastro - Usuário</h1>
 
-        <form className="cadastro-formulario" onSubmit={cadastrar}>
+        <form className="cadastroForm" onSubmit={cadastrar}>
           <label>Nome:</label>
           <input type="text" placeholder="Digite seu Nome" value={nome} onChange={e => setNome(e.target.value)} />
 
@@ -45,7 +46,7 @@ export default function Cadastro() {
           <button type="submit">Cadastrar</button>
         </form>
 
-        <p className="cadastro-login">
+        <p className="cadastroLoginRedirect">
           Já possui uma conta?
           <Link to={'/loginusuario'}> Login</Link>
         </p>

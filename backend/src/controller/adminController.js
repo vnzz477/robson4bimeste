@@ -5,7 +5,20 @@ import { gerarToken } from '../utils/jwt.js';
 const endpoints = Router();
 
 
-endpoints.post('/login', async (req, resp) => {
+endpoints.post('/admin', async (req, resp) => {
+  try {
+    let pessoa = req.body;
+    let id = await db.cadastrarAdmin(pessoa);
+
+    resp.send({ novoId: id });
+  }
+  catch (err) {
+    console.log(err);
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+endpoints.post('/login/admin', async (req, resp) => {
   try {
     const admin = req.body;
     const usuario = await db.validarAdmin(admin);
@@ -29,8 +42,7 @@ endpoints.post('/login', async (req, resp) => {
   }
 });
 
-
-endpoints.get('/usuarios', async (req, resp) => {
+endpoints.get('/usuario/admin', async (req, resp) => {
   try {
     const usuarios = await db.listarUsuarios();
     resp.send(usuarios);
@@ -38,7 +50,6 @@ endpoints.get('/usuarios', async (req, resp) => {
     resp.status(400).send({ erro: err.message });
   }
 });
-
 
 endpoints.get('/usuarios/contagem', async (req, resp) => {
   try {

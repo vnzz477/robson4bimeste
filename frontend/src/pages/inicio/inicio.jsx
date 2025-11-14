@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './inicio.scss';
+import Botao from '../../components/botao/botao';
 
 export default function Inicio() {
   return (
@@ -10,13 +11,15 @@ export default function Inicio() {
           Este projeto foi desenvolvido como parte do 4º bimestre da disciplina de Banco de Dados, ministrada pelo professor Robson.
           Ele contempla cadastro e login de usuários, além de uma área administrativa.
         </p>
+        <Botao />
       </div>
 
       <footer className="inicio-footer">
-        <Link to="/admin" className="btn-admin">
+        <Link to="/cadastroAdmin" className="btn-admin">
           Área Administrativa
         </Link>
       </footer>
+      
     </div>
   );
 }
